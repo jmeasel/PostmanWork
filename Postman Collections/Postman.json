@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "43de4e39-6ce0-49e4-97a1-dee7e0412f66",
+		"name": "Local Media Player API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"id": "aa7b550d-6d26-4778-9618-05c5232110de",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/ping"
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"id": "4ceb5d9b-84ff-4458-b175-b405dcbf2865",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/status"
+			},
+			"response": []
+		},
+		{
+			"name": "Scan Folder",
+			"id": "c8b387ad-8771-4a9d-a0ca-fd8876196e4d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"folder\": \"C:/Users/Jake/Music\"\n}"
+				},
+				"url": "{{base_url}}/playlist/scan"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Playlist",
+			"id": "1155f82c-60ef-4b05-8ffd-56929a560bf1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/playlist"
+			},
+			"response": []
+		},
+		{
+			"name": "Play by Index (0)",
+			"id": "c26b8480-7112-4851-8a43-e32b5089cc00",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{base_url}}/play/index/0"
+			},
+			"response": []
+		},
+		{
+			"name": "Play by Path",
+			"id": "f55e4075-ebec-4ad0-8c56-e115d8277797",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"path\": \"C:/Users/Jake/Music/track1.mp3\"\n}"
+				},
+				"url": "{{base_url}}/play/path"
+			},
+			"response": []
+		},
+		{
+			"name": "Pause",
+			"id": "1f21127d-7b4c-480f-9952-70bd20ad0821",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{base_url}}/pause"
+			},
+			"response": []
+		},
+		{
+			"name": "Resume",
+			"id": "3d62b4ad-c074-4eea-9f54-dcc1d6bc09fc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{base_url}}/resume"
+			},
+			"response": []
+		},
+		{
+			"name": "Stop",
+			"id": "527e499e-56de-4d29-b252-00190218e729",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{base_url}}/stop"
+			},
+			"response": []
+		},
+		{
+			"name": "Seek → 90s",
+			"id": "7e6d408c-694e-4025-8089-ed5e3a7d653a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/seek?seconds=90",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"seek"
+					],
+					"query": [
+						{
+							"key": "seconds",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Next",
+			"id": "f063d549-a47a-4d76-aef9-d5df78b50a41",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{base_url}}/next"
+			},
+			"response": []
+		},
+		{
+			"name": "Prev",
+			"id": "afe24aa0-ff28-4a65-908b-9f0b3d187c26",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{base_url}}/prev"
+			},
+			"response": []
+		},
+		{
+			"name": "Set Volume 100%",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a089e43a-83ab-42ba-a110-d93963590e50",
+						"exec": [
+							"var template = `\r",
+							"<canvas id=\"myChart\" height=\"75\"></canvas>\r",
+							"\r",
+							"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> \r",
+							"\r",
+							"<script>\r",
+							"    var ctx = document.getElementById(\"myChart\");\r",
+							"\r",
+							"    var myChart = new Chart(ctx, {\r",
+							"        type: \"line\",\r",
+							"        data: {\r",
+							"            labels: [\"Level\"],\r",
+							"            datasets: [{\r",
+							"                label: 'Volume Level',\r",
+							"                data: [{{response.level}}],\r",
+							"                \r",
+							"                // Change these colours to customize the chart\r",
+							"                backgroundColor: \"rgba(75, 192, 192, 0.2)\",\r",
+							"                borderColor: \"rgba(75, 192, 192, 1)\",\r",
+							"                borderWidth: 1\r",
+							"            }]\r",
+							"        },\r",
+							"        options: {\r",
+							"            scales: {\r",
+							"                yAxes: [{\r",
+							"                    ticks: {\r",
+							"                        beginAtZero: true\r",
+							"                    }\r",
+							"                }]\r",
+							"            }\r",
+							"        }\r",
+							"    });\r",
+							"\r",
+							"    // Access the data passed to pm.visualizer.set() from the JavaScript\r",
+							"    // code of the Visualizer template\r",
+							"    pm.getData(function (err, value) {\r",
+							"        myChart.data.datasets[0].data = [value.response.level];\r",
+							"        myChart.update();\r",
+							"    });\r",
+							"</script>`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    var res = pm.response.json();\r",
+							"\r",
+							"    var visualizerData = {\r",
+							"        level: res.level\r",
+							"    };\r",
+							"\r",
+							"    return {response: visualizerData};\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "074dc273-8ae0-4f3d-a25a-ef8b1325bed6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/volume"
+			},
+			"response": []
+		},
+		{
+			"name": "Set Mode (repeat on, shuffle off)",
+			"id": "5f33654e-9dd6-44c6-917f-438d76a2965d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"repeat\": true,\n  \"shuffle\": false\n}"
+				},
+				"url": "{{base_url}}/mode"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
